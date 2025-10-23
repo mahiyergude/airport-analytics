@@ -1,6 +1,6 @@
 # Snowflake Data Setup Guide
 
-This document explains how to set up Snowflake and load the raw data for the Frankfurt Airport Analytics project.
+This document explains how to set up Snowflake and load the raw data for the Airport Analytics project.
 
 ## 📋 Prerequisites
 
