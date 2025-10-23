@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    database: AIRPORT_ANALYTICS_DB
+    schema: RAW
+    tables:
+      - name: RAW_AIRPORTS_IATA_ICAO
+      - name: RAW_MASTER
+      - name: RAW_AIRPORT_ARRIVALS

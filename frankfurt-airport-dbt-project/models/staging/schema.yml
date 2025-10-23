@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: stg_airports
+    description: Cleaned and standardized airport reference data
+    columns:
+      - name: airport_name
+        description: Official airport name
+        tests:
+          - not_null
+      - name: iata
+        description: 3-letter IATA code
+      - name: icao
+        description: 4-letter ICAO code
+      - name: latitude
+        description: Geographic latitude
+        tests:
+          - not_null
+      - name: longitude
+        description: Geographic longitude
+        tests:
+          - not_null
+          
+  - name: stg_masters
+    description: Cleaned shipment master records
+    columns:
+      - name: master_number
+        description: Unique shipment identifier
+        tests:
+          - not_null
+          - unique
+      - name: destination_iata
+        description: Destination airport IATA code
+        tests:
+          - not_null
+      - name: origin_iata
+        description: Origin airport IATA code
+        tests:
+          - not_null
+      - name: pieces
+        description: Number of pieces in shipment
+        tests:
+          - not_null
+          - positive_value
+      - name: last_seen
+        description: Shipment timestamp
+        tests:
+          - not_null
+          
+  - name: stg_airport_arrivals
+    description: Cleaned flight arrival records
+    columns:
+      - name: arrival_airport_icao
+        description: Arrival airport ICAO code
+        tests:
+          - not_null
+      - name: icao24
+        description: Aircraft transponder address
+        tests:
+          - not_null
+      - name: first_seen
+        description: Flight first detection timestamp
+        tests:
+          - not_null
+      - name: last_seen
+        description: Flight last detection timestamp
+        tests:
+          - not_null

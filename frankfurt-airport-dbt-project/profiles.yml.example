@@ -1,0 +1,29 @@
+# dbt Profile Configuration for Snowflake
+# Copy this file to ~/.dbt/profiles.yml and update with your credentials
+
+airport:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: YOUR_ACCOUNT  # e.g., xy12345.us-east-1
+      user: dbt
+      password: dbtPassword123  # Change this!
+      role: TRANSFORM
+      database: AIRPORT_ANALYTICS_DB
+      warehouse: COMPUTE_WH
+      schema: DEV
+      threads: 4
+      client_session_keep_alive: False
+      
+    prod:
+      type: snowflake
+      account: YOUR_ACCOUNT
+      user: dbt
+      password: dbtPassword123  # Change this!
+      role: TRANSFORM
+      database: AIRPORT_ANALYTICS_DB
+      warehouse: COMPUTE_WH
+      schema: PROD
+      threads: 8
+      client_session_keep_alive: False

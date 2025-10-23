@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: dim_airport
+    description: Airport dimension table with IATA/ICAO codes
+    columns:
+      - name: airport_code
+        description: Primary airport code
+        tests:
+          - not_null
+          - unique
+      - name: airport_name
+        description: Official airport name
+        tests:
+          - not_null
+      - name: latitude
+        description: Airport latitude
+        tests:
+          - not_null
+      - name: longitude
+        description: Airport longitude
+        tests:
+          - not_null
+          
+  - name: fact_arrivals
+    description: Aggregated flight arrivals by route and date
+    columns:
+      - name: arrival_airport_icao
+        description: Destination airport ICAO code
+        tests:
+          - not_null
+      - name: flight_date
+        description: Date of flights
+        tests:
+          - not_null
+      - name: flight_count
+        description: Number of flights
+        tests:
+          - not_null
+          - positive_value
+          
+  - name: fact_masters
+    description: Aggregated shipments by route and date
+    columns:
+      - name: destination_iata
+        description: Destination airport IATA code
+        tests:
+          - not_null
+      - name: shipment_date
+        description: Date of shipments
+        tests:
+          - not_null
+      - name: total_pieces
+        description: Total pieces shipped
+        tests:
+          - not_null
+          - positive_value
+      - name: shipment_count
+        description: Number of shipments
+        tests:
+          - not_null
+          - positive_value
