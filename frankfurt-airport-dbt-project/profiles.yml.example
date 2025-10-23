@@ -7,8 +7,8 @@ airport:
     dev:
       type: snowflake
       account: YOUR_ACCOUNT  # e.g., xy12345.us-east-1
-      user: dbt
-      password: dbtPassword123  # Change this!
+      user: username # Change this!
+      password: Password  # Change this!
       role: TRANSFORM
       database: AIRPORT_ANALYTICS_DB
       warehouse: COMPUTE_WH
@@ -19,8 +19,8 @@ airport:
     prod:
       type: snowflake
       account: YOUR_ACCOUNT
-      user: dbt
-      password: dbtPassword123  # Change this!
+      user: dbt # Change this!
+      password: Password  # Change this!
       role: TRANSFORM
       database: AIRPORT_ANALYTICS_DB
       warehouse: COMPUTE_WH
