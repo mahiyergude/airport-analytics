@@ -52,25 +52,6 @@ frankfurt-airport-dbt-project/
         
 ```
 
-### Layer Descriptions
-
-**Staging Layer** (`models/staging/`)
-- Cleans and standardizes raw data
-- Parses JSON structures
-- Converts data types
-- Handles NULL values
-
-**Marts Layer** (`models/marts/`)
-- Implements business logic
-- Creates dimensional model (star schema)
-- Aggregates data by date and route
-- Joins related data sources
-
-**Metrics Layer** (`models/metrics/`)
-- Pre-calculated business metrics
-- Answers specific business questions
-- Optimized for reporting and analysis
-
 ## 🏗️ Architecture
 
 ```
