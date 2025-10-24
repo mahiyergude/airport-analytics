@@ -96,13 +96,6 @@ dbt test
 # 5. View documentation
 dbt docs generate && dbt docs serve
 ```
-
-## 📁 Project Structure
-
-- `models/staging/` - Data cleaning & standardization
-- `models/marts/` - Business logic (facts & dimensions)
-- `models/metrics/` - Analytics views answering business questions
-
 ## 📊 Query Results
 
 ```sql
