@@ -17,6 +17,7 @@ frankfurt-airport-dbt-project/
 ├── 📄 dbt_project.yml                    # dbt configuration
 ├── 📄 profiles.yml.example               # Database connection template
 ├── 📄 packages.yml                       # dbt package dependencies
+├── 📄 .gitignore                         # Git ignore rules (logs, credentials, etc.)
 │
 ├── 📂 RAW/                               # Source data files
 │   ├── iata-icao.csv                    # Airport reference data (7,698 airports)
@@ -48,9 +49,21 @@ frankfurt-airport-dbt-project/
 │   └── test_positive_value.sql          # Custom test for positive values
 │
 ├── 📂 analyses/                          # Ad-hoc analytical queries
-    └── ad_hoc_queries.sql               # Exploratory analysis examples
-        
+│   └── ad_hoc_queries.sql               # Exploratory analysis examples
+│
+├── 📂 seeds/                             # CSV files for reference data
+│   └── README.md                        # Seeds documentation
+│
+├── 📂 tests/                             # Custom data quality tests
+│   └── README.md                        # Testing documentation
+│
+├── 📂 snapshots/                         # Slowly changing dimensions (SCD Type 2)
+│   └── README.md                        # Snapshots documentation
+│
+└── 📂 logs/                              # dbt execution logs (auto-generated)
+    └── README.md                        # Logs documentation
 ```
+
 
 ## 🏗️ Architecture
 
