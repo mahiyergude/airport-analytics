@@ -1,4 +1,4 @@
-# Frankfurt Airport Analytics - dbt Project
+# Airport Analytics - dbt Project
 
 A dbt project analyzing air traffic and cargo shipments through Frankfurt Airport (FRA/EDDF) using Snowflake.
 
