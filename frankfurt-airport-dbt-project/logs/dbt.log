@@ -1,0 +1,24 @@
+[0m14:01:03.156915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089b1a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a0bb10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a0bf90>]}
+
+
+============================== 14:01:03.160083 | 387e9942-e3b1-4064-a9fc-09bb5788e392 ==============================
+[0m14:01:03.160083 [info ] [MainThread]: Running with dbt=1.10.11
+[0m14:01:03.160490 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/maheshwariyergude/Downloads/files_final_test/frankfurt-airport-dbt-project/logs', 'profiles_dir': '/Users/maheshwariyergude/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:01:03.314737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '387e9942-e3b1-4064-a9fc-09bb5788e392', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a41e50>]}
+[0m14:01:03.326248 [debug] [MainThread]: Set downloads directory='/var/folders/m6/lj54p43j6nn58jmhx5j6sq340000gn/T/dbt-downloads-6p8rfwz7'
+[0m14:01:03.326570 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m14:01:03.644672 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m14:01:03.645903 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m14:01:03.893641 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m14:01:03.914363 [info ] [MainThread]: Updating lock file in file path: /Users/maheshwariyergude/Downloads/files_final_test/frankfurt-airport-dbt-project/package-lock.yml
+[0m14:01:03.917578 [debug] [MainThread]: Set downloads directory='/var/folders/m6/lj54p43j6nn58jmhx5j6sq340000gn/T/dbt-downloads-8sn4b3mu'
+[0m14:01:03.921493 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m14:01:04.855589 [info ] [MainThread]: Installed from version 1.1.1
+[0m14:01:04.856113 [info ] [MainThread]: Updated version available: 1.3.1
+[0m14:01:04.856749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '387e9942-e3b1-4064-a9fc-09bb5788e392', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108cf7d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108cf7e50>]}
+[0m14:01:04.857220 [info ] [MainThread]: 
+[0m14:01:04.857454 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m14:01:04.870145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a0bbd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089b1dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108d19250>]}
+[0m14:01:04.870503 [debug] [MainThread]: Flushing usage events
+[0m14:01:05.546579 [debug] [MainThread]: An error was encountered while trying to flush usage events
