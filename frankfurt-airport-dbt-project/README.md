@@ -8,6 +8,69 @@ A dbt project analyzing air traffic and cargo shipments through Frankfurt Airpor
 2. ✅ What is the monthly average of flights arriving at Frankfurt Airport?
 3. ✅ What is the most common origin of masters arriving at Frankfurt Airport?
 
+## 📁 Project Structure
+```
+frankfurt-airport-dbt-project/
+│
+├── 📄 README.md                          # Project documentation
+├── 📄 DATA_SETUP.md                      # Snowflake setup instructions
+├── 📄 dbt_project.yml                    # dbt configuration
+├── 📄 profiles.yml.example               # Database connection template
+├── 📄 packages.yml                       # dbt package dependencies
+│
+├── 📂 RAW/                               # Source data files
+│   ├── iata-icao.csv                    # Airport reference data (7,698 airports)
+│   ├── DIM_MASTER.xlsx                  # Shipment data (914,130 records)
+│   └── response.json                    # Flight arrivals from OpenSky API (871 flights)
+│
+├── 📂 models/                            # dbt transformation models
+│   │
+│   ├── sources.yml                      # Source table definitions
+│   │
+│   ├── 📂 staging/                      # Layer 1: Data cleaning
+│   │   ├── schema.yml                  # Model documentation & tests
+│   │   ├── stg_airports.sql            # Clean airport reference data
+│   │   ├── stg_masters.sql             # Clean shipment data
+│   │   └── stg_airport_arrivals.sql    # Parse JSON flight data
+│   │
+│   ├── 📂 marts/                        # Layer 2: Business logic
+│   │   ├── schema.yml                  # Model documentation & tests
+│   │   ├── dim_airport.sql             # Airport dimension table
+│   │   ├── fact_arrivals.sql           # Flight arrivals fact table
+│   │   └── fact_masters.sql            # Shipment fact table
+│   │
+│   └── 📂 metrics/                      # Layer 3: Business questions
+│       ├── q_annual_avg_pieces.sql     # Question 1: Annual average pieces
+│       ├── q_monthly_avg_flights.sql   # Question 2: Monthly average flights
+│       └── q_common_origin_masters.sql # Question 3: Most common origins
+│
+├── 📂 macros/                            # Custom SQL functions
+│   └── test_positive_value.sql          # Custom test for positive values
+│
+├── 📂 analyses/                          # Ad-hoc analytical queries
+    └── ad_hoc_queries.sql               # Exploratory analysis examples
+        
+```
+
+### Layer Descriptions
+
+**Staging Layer** (`models/staging/`)
+- Cleans and standardizes raw data
+- Parses JSON structures
+- Converts data types
+- Handles NULL values
+
+**Marts Layer** (`models/marts/`)
+- Implements business logic
+- Creates dimensional model (star schema)
+- Aggregates data by date and route
+- Joins related data sources
+
+**Metrics Layer** (`models/metrics/`)
+- Pre-calculated business metrics
+- Answers specific business questions
+- Optimized for reporting and analysis
+
 ## 🏗️ Architecture
 
 ```
